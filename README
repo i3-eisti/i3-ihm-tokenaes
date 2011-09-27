@@ -1,0 +1,48 @@
+Courte présentation
+
+1. Prérequis
+
+Avoir Java 1.6 minimum installé sur sa machine
+
+2. Lancement
+
+Le programme se présente sous la forme d'un jar exécutable
+à lancer en double cliquant sur l'icône sur le systèmé le permet,
+ou bien en ligne de commande :
+
+    java -jar <chemin vers le jar>\aestokenizer.jar
+
+3. Utilisation
+
+L'interface démarre avec aucune donnée initialement.
+Le seul bouton disponible 'Pick a CSV' permet de charger ses données issues d'un fichier CSV. (cf. Partie 5)
+
+Une fois les données chargées avec succès, on accède aux informations suivantes :
+   - L'identifiant du site
+   - Les données de chaque clef rangés en colonne
+
+A ce point on peut éditer les valeurs actuelles, en rajouter (utiliser le bouton 'Add row' au besoin)
+
+Une fois l'édition fini, le code SQL permettant d'insérer les données dans une base de données
+est obtenu en cliquant sur 'Generate SQL'.
+
+Une nouvelle fenêtre de prévisualisation du code s'ouvre
+et offre la possibilité de copier le contenu généré dans le presse-papier afin d'être collé là où l'on en a besoin.
+Cette fenêtre se quitte automatiquement si l'on copie le code dans le presse-papier,
+sinon il faut la quitter explicitement avec l'icône en croix.
+
+4. Format du CSV
+
+Le fichier de donnée utilisé par l'application est formatté d'une certaine manière,
+si ce format n'est pas respecté l'application le signalera et retournera dans son état initial.
+
+Format :
+
+Le fichier commence par déclarer l'identifiant avec le champ 'Site ID' exactement puis 6 chiffres.
+Site ID;XXXXXX;
+
+La suite du fichier CSV est une suite non finie d'entrées de type clef-valeur, par exemple :
+Apple;6;Pear;3;Orange;5
+
+Les erreurs courantes sont la présence de mauvais séparateur, ce qui brise la régularité clef-valeur.
+Merci de bien vérifiez vos fichiers avant de les entrer dans l'application.
